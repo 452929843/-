@@ -1,0 +1,9 @@
+def Selectionsort(list):
+    length=len(list)
+    for i in range(length-1):
+        minindex=i      
+        for j in range(i+1,length):
+            if list[minindex]>list[j]:
+                minindex=j
+        list[minindex],list[i]=list[i],list[minindex]
+    return list
