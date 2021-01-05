@@ -1,0 +1,9 @@
+def InsertionSort(list):
+    for i in range(1,len(list)):
+        preindex=i-1
+        current=list[i]      
+        while preindex>=0 and list[preindex]>current:
+            list[preindex+1]=list[preindex]
+            preindex-=1
+        list[preindex+1]=current
+    return list
