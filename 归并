@@ -1,0 +1,19 @@
+def MergeSort(list):
+    if len(list)<2:
+        return list
+    middle=len(list)//2
+    left=list[:middle]
+    right=list[middle:]
+    return merge(MergeSort(left),MergeSort(right))
+def merge(left,right):
+    result=[]
+    while len(left)>0 and len(right)>0:
+        if left[0]<=right[0]:
+            result.append(left.pop(0))            
+        else:
+            result.append(right.pop(0))   
+    while(len(left)):
+        result+=left
+    while(len(right)):
+        result+=right   
+    return result 
